@@ -87,7 +87,7 @@ where
         });
         let style = CellStyle {
             id: self.styles.len() + 1,
-            fill_id: self.fills.len() + 1,
+            fill_id: self.fills.len(),
             font_id: self.fonts.len(),
         };
         self.styles.push(style.clone());
