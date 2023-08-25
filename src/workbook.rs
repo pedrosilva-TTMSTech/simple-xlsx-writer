@@ -80,7 +80,7 @@ where
         background_color_rgb: (u8, u8, u8),
     ) -> CellStyle {
         self.fills.push(Fill {
-            foreground_rgb: (255,100,100),
+            foreground_rgb: background_color_rgb,
         });
         self.fonts.push(Font {
             color: font_color_rgb,
