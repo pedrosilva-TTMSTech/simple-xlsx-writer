@@ -80,14 +80,14 @@ where
         background_color_rgb: (u8, u8, u8),
     ) -> CellStyle {
         self.fills.push(Fill {
-            foreground_rgb: background_color_rgb,
+            foreground_rgb: (255,100,100),
         });
         self.fonts.push(Font {
             color: font_color_rgb,
         });
         let style = CellStyle {
             id: self.styles.len() + 1,
-            fill_id: self.fills.len(),
+            fill_id: self.fills.len()+1,
             font_id: self.fonts.len(),
         };
         self.styles.push(style.clone());
