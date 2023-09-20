@@ -35,7 +35,7 @@ where
         self,
         function: impl FnOnce(&mut SheetWriter<&mut ZipWriter<W>>) -> IoResult<T>,
     ) -> IoResult<T> {
-        let options = FileOptions::default();
+        let options = FileOptions::default().large_file(true);
         self.zip_writer
             .start_file(format!("xl/worksheets/sheet{}.xml", self.id), options)?;
         let mut sheet_writer = SheetWriter::start(&mut *self.zip_writer)?;
